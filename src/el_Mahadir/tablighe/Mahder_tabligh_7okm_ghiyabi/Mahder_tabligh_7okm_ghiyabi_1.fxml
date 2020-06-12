@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Group stylesheets="@../../../Style/popUP.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="el_Mahadir.tablighe.Mahder_tabligh_7okm_ghiyabi.Mahder_tabligh_7okm_ghiyabiController_1">
+   <children>
+      <AnchorPane layoutX="8.0" layoutY="21.0" prefHeight="620.0" prefWidth="681.0" stylesheets="@../../../Style/mainStyle.css">
+         <children>
+            <VBox alignment="CENTER_RIGHT" layoutX="103.0" layoutY="45.0" prefHeight="510.0" prefWidth="557.0" spacing="20.0">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" spacing="30.0">
+                     <children>
+                        <TextField fx:id="tf_رقم_الملف" nodeOrientation="RIGHT_TO_LEFT" />
+                        <Label text="رقم الملف :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="30.0">
+                     <children>
+                        <TextField fx:id="tf_رقم_العام" nodeOrientation="RIGHT_TO_LEFT" />
+                        <Label text="رقم السنة :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" spacing="30.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="33.0" prefWidth="283.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="tf_المحكمة" nodeOrientation="RIGHT_TO_LEFT" />
+                              <Label text="الحضور أمام :">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="33.0" prefWidth="164.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="tf_قسم" nodeOrientation="RIGHT_TO_LEFT" prefWidth="149.0" />
+                              <Label fx:id="lbl_قسم" text="قسم :">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="33.0" prefWidth="218.0" spacing="10.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" spacing="20.0">
+                           <children>
+                              <DatePicker fx:id="dp_تاريخ" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="179.0" />
+                              <Label text="تاريخ الجلسة :">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox nodeOrientation="RIGHT_TO_LEFT">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="33.0" prefWidth="251.0" spacing="20.0">
+                           <children>
+                              <TextField fx:id="tf_رقم_الفهرس" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="181.0" />
+                              <Label prefHeight="17.0" prefWidth="88.0" text="رقم الفهرس :">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="33.0" prefWidth="251.0" spacing="20.0">
+                           <children>
+                              <TextField fx:id="tf_رقم_الجدول" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="181.0" />
+                              <Label fx:id="lbl_الجدول" prefHeight="17.0" prefWidth="88.0" text="رقم الجدول :">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="40.0">
+                     <children>
+                        <TextField fx:id="tf_السيد" nodeOrientation="RIGHT_TO_LEFT" />
+                        <Label text="السيد(ة) :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="45.0">
+                     <children>
+                        <TextField fx:id="tf_سكن_الطالب" nodeOrientation="RIGHT_TO_LEFT" />
+                        <Label text="الساكن :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                     <children>
+                        <TextField fx:id="tf_المحامي" nodeOrientation="RIGHT_TO_LEFT" />
+                        <Label text="القائم في حقه الأستاذ:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="35.0">
+                     <children>
+                        <TextField fx:id="tf_المطلوب" nodeOrientation="RIGHT_TO_LEFT" />
+                        <Label text="المطلوب:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Button fx:id="btn_modifier" layoutX="279.0" layoutY="574.0" mnemonicParsing="false" onAction="#update_mahderTaklif" text="حفظ التغييرات" />
+            <Label fx:id="isEmpty" layoutX="636.0" layoutY="566.0" />
+            <Button fx:id="btnPrint" layoutX="58.0" layoutY="473.0" mnemonicParsing="false" onAction="#print" prefHeight="56.0" prefWidth="57.0" stylesheets="@../../../Style/button.css" />
+            <Label fx:id="choose_تبليغ" alignment="CENTER" layoutX="19.0" layoutY="22.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="17.0" prefWidth="640.0">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button id="btnClose" fx:id="btnClose" layoutX="676.0" layoutY="7.0" mnemonicParsing="false" onAction="#quit" prefHeight="27.0" prefWidth="27.0" stylesheets="@../../../Style/button.css" />
+   </children>
+</Group>

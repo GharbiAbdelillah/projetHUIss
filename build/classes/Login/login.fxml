@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="601.0" prefWidth="814.0" styleClass="background" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.loginController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="535.0" prefWidth="760.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="511.0" prefWidth="671.0">
+               <children>
+                  <AnchorPane fx:id="apDesignPane" prefHeight="351.0" prefWidth="671.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="18.0" text="DG Software :" textFill="#e4dbdb" underline="true">
+                           <font>
+                              <Font name="System Bold" size="31.0" />
+                           </font>
+                           <effect>
+                              <Reflection bottomOpacity="0.04" fraction="0.6" topOpacity="0.32" />
+                           </effect>
+                        </Label>
+                        <AnchorPane id="signAnchor" layoutX="381.0" layoutY="52.0" prefHeight="280.0" prefWidth="282.0">
+                           <children>
+                              <GridPane layoutX="5.0" layoutY="83.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="97.0" prefWidth="281.0" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="userName" nodeOrientation="RIGHT_TO_LEFT" promptText="إسم المستخدم" GridPane.columnSpan="2" />
+                                    <PasswordField fx:id="userPassword" nodeOrientation="RIGHT_TO_LEFT" promptText="كلمة السر" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                                    <Button id="closebutton" mnemonicParsing="false" onAction="#cleanTextField" prefHeight="31.0" prefWidth="29.0" stylesheets="@loginStyle.css" GridPane.columnSpan="2" GridPane.halignment="RIGHT" />
+                                    <Button id="closebutton" mnemonicParsing="false" onAction="#cleanPasswordField" prefHeight="31.0" prefWidth="29.0" stylesheets="@loginStyle.css" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <Hyperlink layoutX="101.0" layoutY="255.0" onAction="#createAccount" text="Créer un compte">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Hyperlink>
+                              <Label layoutX="60.0" layoutY="14.0" text="Se connecter">
+                                 <font>
+                                    <Font name="DejaVu Sans Bold" size="29.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="81.0" layoutY="205.0" mnemonicParsing="false" onAction="#logIn" text="Se connecter" />
+                           </children>
+                        </AnchorPane>
+                        <Text fill="WHITE" layoutX="10.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Merci d'avoir choisi notre groupe :      &quot;DG Software&quot;" wrappingWidth="327.9999786019325">
+                           <font>
+                              <Font name="System Italic" size="20.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="14.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vous pouvez partager votre commentaire / exigence avec nous ;)" wrappingWidth="319.99998460058123">
+                           <font>
+                              <Font name="System Italic" size="20.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="14.0" layoutY="276.0" text="Envoyez nous un mail:  dgsoftware1334@gmail.com" textFill="#fdfdff" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Button id="btnClose" layoutX="744.0" layoutY="3.0" mnemonicParsing="false" onAction="#close" prefHeight="53.0" prefWidth="57.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="3.0">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
+   </children>
+   <stylesheets>
+      <URL value="@loginStyle.css" />
+      <URL value="@../Style/button.css" />
+   </stylesheets>
+</AnchorPane>

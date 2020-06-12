@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Group stylesheets="@../Style/popUP.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="el_Milafat_Controllers.AjouterMilafeController">
+   <children>
+      <AnchorPane layoutX="9.0" layoutY="9.0" prefHeight="615.0" prefWidth="776.0" stylesheets="@../Style/mainStyle.css">
+         <children>
+            <VBox alignment="CENTER" layoutX="430.0" layoutY="35.0" prefHeight="457.0" prefWidth="336.0" spacing="30.0">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" spacing="30.0">
+                     <children>
+                        <TextField fx:id="tf_رقم_الملف" alignment="CENTER_RIGHT" />
+                        <Label contentDisplay="RIGHT" text="رقم الملف :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT">
+                     <children>
+                        <DatePicker fx:id="dp_تاريخ_ايداع_الملف" nodeOrientation="RIGHT_TO_LEFT" />
+                        <Label contentDisplay="RIGHT" text="تاريخ ايداع الملف :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" spacing="32.0">
+                     <children>
+                        <ComboBox fx:id="combo_نوع_الملف" prefWidth="150.0" />
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="نوع الملف :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" spacing="19.0">
+                     <children>
+                        <ComboBox fx:id="combo_طبيعة_الملف" prefWidth="150.0" />
+                        <Label contentDisplay="RIGHT" text="طبيعة الملف :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" spacing="10.0">
+                     <children>
+                        <DatePicker fx:id="dp_تاريخ_الإستدعاء" nodeOrientation="RIGHT_TO_LEFT" />
+                        <Label contentDisplay="RIGHT" text="تاريخ الإستدعاء :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" spacing="26.0">
+                     <children>
+                        <DatePicker fx:id="dp_تاريخ_الإنجاز" nodeOrientation="RIGHT_TO_LEFT" />
+                        <Label contentDisplay="RIGHT" text="تاريخ الإنجاز :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" spacing="25.0">
+                     <children>
+                        <TextField fx:id="tf_إسم_الطالب" alignment="CENTER_RIGHT" />
+                        <Label contentDisplay="RIGHT" text="إسم الطالب :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" spacing="15.0">
+                     <children>
+                        <TextField fx:id="tf_إسم_المطلوب" alignment="CENTER_RIGHT" />
+                        <Label contentDisplay="RIGHT" text="إسم المطلوب :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutX="14.0" layoutY="317.0" prefHeight="132.0" prefWidth="289.0" spacing="20.0">
+               <children>
+                  <HBox alignment="CENTER_RIGHT">
+                     <children>
+                        <Label text="دج">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tf_دفع" alignment="CENTER_RIGHT" onKeyReleased="#totalCost">
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="دفع :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT">
+                     <children>
+                        <Label text="دج" />
+                        <TextField fx:id="tf_تسبيق" alignment="CENTER_RIGHT" onKeyReleased="#totalCost">
+                           <HBox.margin>
+                              <Insets right="13.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="تسبيق :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT">
+                     <children>
+                        <Label text="دج" />
+                        <TextField fx:id="tf_تسوية" alignment="CENTER_RIGHT" onKeyReleased="#totalCost">
+                           <HBox.margin>
+                              <Insets right="13.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="تسوية :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="1.0">
+                     <children>
+                        <Label text="دج" />
+                        <TextField fx:id="tf_المجموع" alignment="CENTER_RIGHT" editable="false" />
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="المجموع :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Button fx:id="btn_modifier" layoutX="324.0" layoutY="550.0" mnemonicParsing="false" onAction="#updateChanges" text="حفض التغييرات" />
+            <Button fx:id="btn_ajoute" layoutX="324.0" layoutY="550.0" mnemonicParsing="false" onAction="#addFile" prefHeight="35.0" prefWidth="129.0" text="أضف الملف">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="isEmpty" layoutX="106.0" layoutY="41.0" />
+         </children>
+      </AnchorPane>
+      <Button id="btnClose" fx:id="btnClose" layoutX="759.0" layoutY="-8.0" mnemonicParsing="false" onAction="#quit" prefHeight="39.0" prefWidth="40.0" stylesheets="@../Style/button.css" />
+   </children>
+</Group>

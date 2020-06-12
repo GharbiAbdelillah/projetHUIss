@@ -1,0 +1,53 @@
+
+.anchorPane{
+    -fx-background-image: url("../Image/accueil.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: stretch;
+    
+}
+
+.button{
+    -fx-border-width: 0.5px;
+    -fx-border-color: #ACACAC;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-background-color: transparent;
+    -fx-font-size: 12px; 
+    -fx-background-color: rgba(238, 238,238, .4);
+    -fx-font-weight:700;
+    -fx-font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+        -fx-cursor: hand;
+}
+.button:hover{
+    -fx-background-color: rgba(255, 0, 0, .4);
+    -fx-text-fill: white;
+
+}
+.button:focused{
+   -fx-border-width: 0.5px;
+    -fx-border-color: #ACACAC;
+   -fx-border-radius: 10px;
+}
+.button:pressed{
+    -fx-background-color: grey;
+    -fx-text-fill: white;
+}
+
+
+#logOut{
+    -fx-background-image: url("../Image/loginOut.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: stretch;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+#logOut:hover{
+    -fx-background-image: url("../Image/loginOut2.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: stretch;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    
+}

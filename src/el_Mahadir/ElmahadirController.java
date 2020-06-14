@@ -9,6 +9,8 @@ import el_Mahadir.tablighe.Mahder_tabligh_7okm_7dori.*;
 import static Login.loginController.accueilStage;
 import static dashboard.AccueilController.stage2;
 import el_Mahadir.tablighe.Mahder_tabligh_7okm_ghiyabi.Mahder_tabligh_7okm_ghiyabiController;
+import el_Mahadir.tablighe.Mahder_tabligh_9arar_ghiyabi.Mahder_tabligh_9arar_ghiyabiController;
+import el_Mahadir.tablighe.Mahder_tabligh_Amre_Isti3jali.Mahder_tabligh_Amre_Isti3jaliController;
 import static huissier_de_justice.StackPaneController.stackContent;
 import java.io.IOException;
 import java.net.URL;
@@ -17,11 +19,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -47,17 +46,19 @@ public class ElmahadirController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Mahder_tabligh_7okm_7doriController tabligh_Hodori;
         Mahder_tabligh_7okm_ghiyabiController tabligh_Ghiyabi;
+        Mahder_tabligh_Amre_Isti3jaliController tabligh_Isti3jali;
+        Mahder_tabligh_9arar_ghiyabiController tabligh_9arar;
 
         if (!combo_المحضر.getValue().equals(null)) {
             switch (combo_المحضر.getValue()) {
-                
+
                 case "التكليف بالحضور مع التسليم":
                     accueilStage.setTitle("التكليف بالحضور");
                     stackContent.getChildren().clear();
                     stackContent.getChildren().add(FXMLLoader.load(getClass().getResource("/el_Mahadir/Tek_hodor/tek_Hodor&Taslim_1.fxml")));
 
                     break;
-                    
+
                 case "محضـر تبليــغ حكم حضـوري":
 
                     fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_7okm_7dori/mahder_tabligh_7okm_7dori.fxml"));
@@ -69,7 +70,7 @@ public class ElmahadirController implements Initializable {
                     tabligh_Hodori.choose_تبليغ.setText("محضـر تبليــغ حكم حضـوري");
 
                     break;
-                    
+
                 case "محضـر تبليــغ حكم غيابي":
                     fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_7okm_ghiyabi/Mahder_tabligh_7okm_ghiyabi.fxml"));
 
@@ -80,7 +81,7 @@ public class ElmahadirController implements Initializable {
                     tabligh_Ghiyabi.choose_تبليغ.setText("محضـر تبليــغ حكم غيابي");
 
                     break;
-                    
+
                 case "محضـر تبليـغ حكم حضـوري إبتدائي نهائـي":
 
                     fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_7okm_7dori/mahder_tabligh_7okm_7dori.fxml"));
@@ -92,7 +93,7 @@ public class ElmahadirController implements Initializable {
                     tabligh_Hodori.choose_تبليغ.setText("محضـر تبليـغ حكم حضـوري إبتدائي نهائـي");
 
                     break;
-                    
+
                 case "محضـر تبليـغ حكم غيابـي إبتـدائـي نهائـي":
                     fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_7okm_ghiyabi/Mahder_tabligh_7okm_ghiyabi.fxml"));
 
@@ -112,6 +113,39 @@ public class ElmahadirController implements Initializable {
                     tabligh_Ghiyabi = fxmlLoader.getController();
                     tabligh_Ghiyabi.choose_تبليغ.setText("محضـر تبليـغ حكم غيابـي نهائـي");
                     break;
+                case "محضـر تبليــغ أمــر  استعجالي":
+
+                    fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_Amre_Isti3jali/Mahder_tabligh_Amre_Isti3jali.fxml"));
+
+                    accueilStage.setTitle("محضـر تبليــغ أمــر  استعجالي");
+                    stackContent.getChildren().clear();
+                    stackContent.getChildren().add(fxmlLoader.load());
+                    tabligh_Isti3jali = fxmlLoader.getController();
+                    tabligh_Isti3jali.choose_تبليغ.setText("محضـر تبليــغ أمــر  استعجالي");
+
+                    break;
+                    case "محضـر تبليــغ أمــر  استعجالي غيابي":
+
+                    fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_Amre_Isti3jali/Mahder_tabligh_Amre_Isti3jali.fxml"));
+
+                    accueilStage.setTitle("محضـر تبليــغ أمــر  استعجالي غيابي");
+                    stackContent.getChildren().clear();
+                    stackContent.getChildren().add(fxmlLoader.load());
+                    tabligh_Isti3jali = fxmlLoader.getController();
+                    tabligh_Isti3jali.choose_تبليغ.setText("محضـر تبليــغ أمــر  استعجالي غيابي");
+
+                    break;
+                    case "محضر تبليــغ قـــرار غيـابـي":
+
+                    fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_9arar_ghiyabi/Mahder_tabligh_9arar_ghiyabi.fxml"));
+
+                    accueilStage.setTitle("محضر تبليــغ قـــرار غيـابـي");
+                    stackContent.getChildren().clear();
+                    stackContent.getChildren().add(fxmlLoader.load());
+                    tabligh_9arar = fxmlLoader.getController();
+                    tabligh_9arar.choose_تبليغ.setText("محضر تبليــغ قـــرار غيـابـي");
+
+                    break;
             }
 
             stage2.close();
@@ -123,7 +157,7 @@ public class ElmahadirController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        combo_المحضر.getItems().addAll("التكليف بالحضور مع التسليم", "محضـر تبليــغ حكم حضـوري", "محضـر تبليــغ حكم غيابي", "محضـر تبليـغ حكم حضـوري إبتدائي نهائـي", "محضـر تبليـغ حكم غيابـي إبتـدائـي نهائـي", "محضـر تبليـغ حكم غيابـي نهائـي");
+        combo_المحضر.getItems().addAll("التكليف بالحضور مع التسليم", "محضـر تبليــغ حكم حضـوري", "محضـر تبليــغ حكم غيابي", "محضـر تبليـغ حكم حضـوري إبتدائي نهائـي", "محضـر تبليـغ حكم غيابـي إبتـدائـي نهائـي", "محضـر تبليـغ حكم غيابـي نهائـي","محضـر تبليــغ أمــر  استعجالي","محضـر تبليــغ أمــر  استعجالي غيابي","محضر تبليــغ قـــرار غيـابـي");
     }
 
 }

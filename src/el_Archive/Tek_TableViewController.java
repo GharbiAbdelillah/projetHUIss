@@ -11,6 +11,7 @@ import static Login.loginController.accueilStage;
 import el_Archive.archiveList.viewArchiveList;
 import el_Mahadir.tablighe.Mahder_tabligh_7okm_7dori.Mahder_tabligh_7okm_7doriController_1;
 import el_Mahadir.tablighe.Mahder_tabligh_7okm_ghiyabi.Mahder_tabligh_7okm_ghiyabiController_1;
+import el_Mahadir.tablighe.Mahder_tabligh_Amre_Isti3jali.Mahder_tabligh_Amre_Isti3jaliController_1;
 import static huissier_de_justice.StackPaneController.stackContent;
 import static huissier_de_justice.main.logStage;
 import java.io.IOException;
@@ -112,18 +113,31 @@ public class Tek_TableViewController implements Initializable {
                     break;
                 case "محضـر تبليــغ حكم غيابي":
                     showTabligh_7okm_ghiyabi("محضـر تبليــغ حكم غيابي");
-                    
+
                     break;
                 case "محضـر تبليـغ حكم حضـوري إبتدائي نهائـي":
                     showTabligh_7okm_7odori("محضـر تبليـغ حكم حضـوري إبتدائي نهائـي");
-                    
+
                     break;
                 case "محضـر تبليـغ حكم غيابـي إبتـدائـي نهائـي":
                     showTabligh_7okm_ghiyabi("محضـر تبليـغ حكم غيابـي إبتـدائـي نهائـي");
-                    
+
                     break;
                 case "محضـر تبليـغ حكم غيابـي نهائـي":
                     showTabligh_7okm_ghiyabi("محضـر تبليـغ حكم غيابـي نهائـي");
+
+                    break;
+                case "محضـر تبليــغ أمــر  استعجالي":
+                    showTabligh_Amre_Isti3jali("محضـر تبليــغ أمــر  استعجالي");
+
+                    break;
+                case "محضـر تبليــغ أمــر  استعجالي غيابي":
+                    showTabligh_Amre_Isti3jali("محضـر تبليــغ أمــر  استعجالي غيابي");
+
+                    break;
+                case "محضر تبليــغ قـــرار غيـابـي":
+                    showTabligh_Amre_Isti3jali("محضر تبليــغ قـــرار غيـابـي");
+
                     break;
             }
         }
@@ -199,6 +213,52 @@ public class Tek_TableViewController implements Initializable {
             tablighController.tf_المحامي.setText(rs.getString(10));
             tablighController.tf_سكن_الطالب.setText(rs.getString(11));
             tablighController.tf_المطلوب.setText(rs.getString(12));
+            tablighController.choose_تبليغ.setText(choose);
+            if (rs.getString(14).equals("محكمة")) {
+                tablighController.lbl_قسم.setText("قسم :");
+                tablighController.lbl_الجدول.setText("رقم الجدول:");
+            } else {
+                tablighController.lbl_قسم.setText("غرفة:");
+                tablighController.lbl_الجدول.setText("رقم القضية:");
+            }
+        }
+
+        ps.close();
+        rs.close();
+        Parent root = fxmlLoader.getRoot();
+        Scene scene = new Scene(root);
+        scene.setFill(new Color(0, 0, 0, 0));
+        stage.setScene(scene);
+        tablighController.btn_modifier.setVisible(true);
+        tablighController.btnPrint.setVisible(true);
+        stage.showAndWait();
+        anchorPane.setOpacity(1);
+    }
+//////////////////////////////////// tabligh (03) Amre Isti3jali ///////////////////////////////////////////////
+
+    private void showTabligh_Amre_Isti3jali(String choose) throws SQLException, IOException {
+        anchorPane.setOpacity(0.4);
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_Amre_Isti3jali/Mahder_tabligh_Amre_Isti3jali_1.fxml"));
+        fxmlLoader.load();
+        String sql = "select * from tabligh where num_file ='" + table_التكليف.getSelectionModel().getSelectedItem().getColumn_الملف() + "' and num_Annee ='" + table_التكليف.getSelectionModel().getSelectedItem().getColumn_رقم_العام() + "' ";
+        ps = conn.prepareStatement(sql);
+        rs = ps.executeQuery();
+        Mahder_tabligh_Amre_Isti3jaliController_1 tablighController = fxmlLoader.getController();
+        while (rs.next()) {
+
+            tablighController.tf_رقم_الملف.setText(rs.getString(1));
+            tablighController.tf_رقم_العام.setText(rs.getString(2));
+            tablighController.tf_المحكمة.setText(rs.getString(4));
+            tablighController.tf_قسم.setText(rs.getString(5));
+            tablighController.dp_تاريخ.setValue(LocalDate.parse(rs.getString(6)));
+            tablighController.tf_رقم_الفهرس.setText(rs.getString(7));
+            tablighController.tf_رقم_الجدول.setText(rs.getString(8));
+            tablighController.tf_السيد.setText(rs.getString(9));
+            tablighController.tf_المحامي.setText(rs.getString(10));
+            tablighController.tf_سكن_الطالب.setText(rs.getString(11));
+            tablighController.tf_المطلوب.setText(rs.getString(12));
+            tablighController.tf_سكن_المطلوب.setText(rs.getString(13));
             tablighController.choose_تبليغ.setText(choose);
             if (rs.getString(14).equals("محكمة")) {
                 tablighController.lbl_قسم.setText("قسم :");

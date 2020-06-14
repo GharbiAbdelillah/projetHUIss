@@ -95,8 +95,8 @@ public class Mahder_tabligh_Amre_Isti3jaliController_1 implements Initializable 
     @FXML
     public Label lbl_الجدول;
 
-    public Label choose_تبليغ ;
-    
+    public Label choose_تبليغ;
+
     @FXML
     private void quit(ActionEvent event) {
         Stage stage = (Stage) btnClose.getScene().getWindow();
@@ -181,14 +181,14 @@ public class Mahder_tabligh_Amre_Isti3jaliController_1 implements Initializable 
     private void printTekHodor() throws JRException {
         InputStream is = null;
         switch (choose_تبليغ.getText()) {
-            case "محضـر تبليــغ حكم حضـوري":
-                is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tabligh_7okm_7dori/report_tabligh_7okm_7dori.jrxml");
+            case "محضـر تبليــغ أمــر  استعجالي":
+                is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tabligh_Amre_Isti3jali/Mahder_tabligh_Amre_Isti3jali.jrxml");
                 break;
-            case "محضـر تبليـغ حكم حضـوري إبتدائي نهائـي":
-                is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tabligh_7okm_7odori_ibtidai_nihai/report_tabligh_7okm_7dori_ibtidai_nihai.jrxml");
+            case "محضـر تبليــغ أمــر  استعجالي غيابي":
+                is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tabligh_Amre_Isti3jali_Ghiyabi/Mahder_tabligh_Amre_Isti3jali_Ghiyabi.jrxml");
                 break;
         }
-       
+
         JasperReport jr = JasperCompileManager.compileReport(is);
         HashMap<String, Object> parametre = new HashMap<>();
 
@@ -206,7 +206,6 @@ public class Mahder_tabligh_Amre_Isti3jaliController_1 implements Initializable 
         parametre.put("رقم_الفهرس", tf_رقم_الفهرس.getText());
         parametre.put("type_جدول", lbl_الجدول.getText());
         parametre.put("جدول", tf_رقم_الجدول.getText());
-
 
         JasperPrint jp = JasperFillManager.fillReport(jr, parametre);
         JasperViewer.viewReport(jp, false);

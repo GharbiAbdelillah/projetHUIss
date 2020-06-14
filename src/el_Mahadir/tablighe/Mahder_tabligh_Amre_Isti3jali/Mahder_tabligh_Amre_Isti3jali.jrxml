@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="410892f8-734c-4c08-b679-b17387b78694">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="271"/>
+	<property name="ireport.y" value="175"/>
 	<parameter name="السيد" class="java.lang.String"/>
 	<parameter name="avocat" class="java.lang.String"/>
 	<parameter name="lieuPerson" class="java.lang.String"/>
@@ -81,8 +81,8 @@
 				<textElement textAlignment="Center">
 					<font size="20" isBold="true" isUnderline="true"/>
 				</textElement>
-				<text><![CDATA[محضـر تبليــغ حكم حضـوري
-المــادة 336 من قانــون الإجــــراءات المدنيــةوالإداريــــة]]></text>
+				<text><![CDATA[محضـر تبليــغ أمــر  استعجالي 
+المــادة 304/2 من قانــون الإجــــراءات المدنيــةوالإداريــــة]]></text>
 			</staticText>
 		</band>
 	</pageHeader>
@@ -155,11 +155,11 @@
 				<text><![CDATA[وبطلب من  السيد (ة) :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="115" y="107" width="89" height="23" uuid="bb85a9e9-2e95-49be-8718-a2968f6ec0e4"/>
+				<reportElement x="160" y="107" width="44" height="23" uuid="bb85a9e9-2e95-49be-8718-a2968f6ec0e4"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[القائم في حقه الأستاذ :]]></text>
+				<text><![CDATA[بواسطة :]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="378" y="130" width="59" height="20" uuid="2a5b91e4-3829-4a51-b283-5586e27be28f"/>
@@ -169,11 +169,11 @@
 				<text><![CDATA[الســـــاكـــن :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="150" width="437" height="26" uuid="dcae5a2c-d49a-4f16-949b-cd9fac47b3d5"/>
+				<reportElement x="4" y="150" width="433" height="30" uuid="dcae5a2c-d49a-4f16-949b-cd9fac47b3d5"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[بنـاء على المواد 322،313، 336، 405، 406، 407 416  مـــن قانــــون الإجــراءات المدنيــــة والإداريــــة]]></text>
+				<text><![CDATA[بعد الاطلاع على المواد:313، 322، 304، 405، 406 ،407 ،416 من قانون الإجراءات المدنية والإدارية]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="370" y="264" width="67" height="20" uuid="1c6632ef-e9a6-4a3b-9a1e-a0c97c97b732"/>
@@ -324,14 +324,14 @@
 				<textFieldExpression><![CDATA[$P{type_قسم}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="226" y="180" width="211" height="21" uuid="ec904bf8-5cb8-4634-a55a-99827e5fef99"/>
+				<reportElement x="294" y="180" width="143" height="21" uuid="ec904bf8-5cb8-4634-a55a-99827e5fef99"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[بلغنا وسلمنا نسخة من/ الحكم الحضوري الصادر عن :]]></text>
+				<text><![CDATA[بلغنا نسخة من الأمر الصادر عن :]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="20" y="180" width="206" height="23" uuid="770d96f4-7659-475d-9c10-6ab2223cb103"/>
+				<reportElement x="20" y="180" width="273" height="23" uuid="770d96f4-7659-475d-9c10-6ab2223cb103"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>
@@ -344,7 +344,7 @@
 				</textElement>
 				<text><![CDATA[مخـاطـبين/                              حسب تصريحه: 
  الحامل (لبطاقة التعريف) :                                   رقــم :....................        الصادرة عن :                 بتاريخ: 
-وأعلمناه بأن اجل الطعن بالاستئناف محدد بشهر واحد (01) ابتداء من تاريخ التبليغ إذا كان للشخص ذاته ويمدد أجل الاستئناف إلى شهرين (02) إذا تم التبليغ في موطنه الحقيقي أو المختار طبقا لنص المادة 336 من قانـون الإجــراءات المدنية والإداريـة]]></text>
+واعلمناه بان اجل الاستئناف محدد بخمسة عشرة (15) يوما من تاريخ التبليغ للامر طبقا للمادة 304 فقرة 2 من قانون الإجراءات المدنية و الإدارية]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="160" y="201" width="100" height="23" uuid="9780ce50-8608-4f64-b5e7-d16b1b0f0aee"/>
@@ -375,7 +375,7 @@
 				<textFieldExpression><![CDATA[$P{جدول}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="15" y="107" width="100" height="23" uuid="f7f669b7-d647-40b6-8cf2-d96ff3893369"/>
+				<reportElement x="15" y="107" width="139" height="23" uuid="f7f669b7-d647-40b6-8cf2-d96ff3893369"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>

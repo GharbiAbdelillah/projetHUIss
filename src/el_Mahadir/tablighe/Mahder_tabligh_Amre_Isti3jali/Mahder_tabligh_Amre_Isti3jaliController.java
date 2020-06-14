@@ -163,6 +163,7 @@ public class Mahder_tabligh_Amre_Isti3jaliController implements Initializable {
                 alert.setTitle("Sucess");
                 alert.setContentText("تم الحفظ بنجاح :   ");
                 alert.showAndWait();
+                System.out.println(" hhdjhkjhqskjh "+choose_تبليغ.getText());
                 printTekHodor(choose_تبليغ.getText());
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -239,11 +240,11 @@ public class Mahder_tabligh_Amre_Isti3jaliController implements Initializable {
     private void printTekHodor(String choose_تبليغ) throws JRException {
         InputStream is = null;
         switch (choose_تبليغ) {
-            case "محضـر تبليــغ حكم حضـوري":
-                is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tabligh_7okm_7dori/report_tabligh_7okm_7dori.jrxml");
+            case "محضـر تبليــغ أمــر  استعجالي":
+                is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tabligh_Amre_Isti3jali/Mahder_tabligh_Amre_Isti3jali.jrxml");
                 break;
-            case "محضـر تبليـغ حكم حضـوري إبتدائي نهائـي":
-                is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tabligh_7okm_7odori_ibtidai_nihai/report_tabligh_7okm_7dori_ibtidai_nihai.jrxml");
+            case "محضـر تبليــغ أمــر  استعجالي غيابي":
+                is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tabligh_Amre_Isti3jali_Ghiyabi/Mahder_tabligh_Amre_Isti3jali_Ghiyabi.jrxml");
                 break;
           
         }

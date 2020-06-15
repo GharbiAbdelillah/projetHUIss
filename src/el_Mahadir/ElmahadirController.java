@@ -8,6 +8,7 @@ package el_Mahadir;
 import el_Mahadir.tablighe.Mahder_tabligh_7okm_7dori.*;
 import static Login.loginController.accueilStage;
 import static dashboard.AccueilController.stage2;
+import el_Mahadir.tablighe.Mahder_tabligh_7okm_Idari_7odori.Mahder_tabligh_7okm_Idari_7odoriController;
 import el_Mahadir.tablighe.Mahder_tabligh_7okm_ghiyabi.Mahder_tabligh_7okm_ghiyabiController;
 import el_Mahadir.tablighe.Mahder_tabligh_9arar_ghiyabi.Mahder_tabligh_9arar_ghiyabiController;
 import el_Mahadir.tablighe.Mahder_tabligh_Amre_Isti3jali.Mahder_tabligh_Amre_Isti3jaliController;
@@ -48,6 +49,7 @@ public class ElmahadirController implements Initializable {
         Mahder_tabligh_7okm_ghiyabiController tabligh_Ghiyabi;
         Mahder_tabligh_Amre_Isti3jaliController tabligh_Isti3jali;
         Mahder_tabligh_9arar_ghiyabiController tabligh_9arar;
+        Mahder_tabligh_7okm_Idari_7odoriController tabligh_Idari;
 
         if (!combo_المحضر.getValue().equals(null)) {
             switch (combo_المحضر.getValue()) {
@@ -146,6 +148,39 @@ public class ElmahadirController implements Initializable {
                     tabligh_9arar.choose_تبليغ.setText("محضر تبليــغ قـــرار غيـابـي");
 
                     break;
+                    case "محضـر تبليــغ قـــرار حضـوري":
+
+                    fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_9arar_ghiyabi/Mahder_tabligh_9arar_ghiyabi.fxml"));
+
+                    accueilStage.setTitle("محضـر تبليــغ قـــرار حضـوري");
+                    stackContent.getChildren().clear();
+                    stackContent.getChildren().add(fxmlLoader.load());
+                    tabligh_9arar = fxmlLoader.getController();
+                    tabligh_9arar.choose_تبليغ.setText("محضـر تبليــغ قـــرار حضـوري");
+
+                    break;
+                    case "محضر تبليغ حكــم إداري حضــوري":
+
+                    fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_7okm_Idari_7odori/Mahder_tabligh_7okm_Idari_7odori.fxml"));
+
+                    accueilStage.setTitle("محضر تبليغ حكــم إداري حضــوري");
+                    stackContent.getChildren().clear();
+                    stackContent.getChildren().add(fxmlLoader.load());
+                    tabligh_Idari = fxmlLoader.getController();
+                    tabligh_Idari.choose_تبليغ.setText("محضر تبليغ حكــم إداري حضــوري");
+
+                    break;
+                    case "تبليــغ حكــم إداري غيابي":
+
+                    fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_7okm_Idari_7odori/Mahder_tabligh_7okm_Idari_7odori.fxml"));
+
+                    accueilStage.setTitle("تبليــغ حكــم إداري غيابي");
+                    stackContent.getChildren().clear();
+                    stackContent.getChildren().add(fxmlLoader.load());
+                    tabligh_Idari = fxmlLoader.getController();
+                    tabligh_Idari.choose_تبليغ.setText("تبليــغ حكــم إداري غيابي");
+
+                    break;
             }
 
             stage2.close();
@@ -157,7 +192,7 @@ public class ElmahadirController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        combo_المحضر.getItems().addAll("التكليف بالحضور مع التسليم", "محضـر تبليــغ حكم حضـوري", "محضـر تبليــغ حكم غيابي", "محضـر تبليـغ حكم حضـوري إبتدائي نهائـي", "محضـر تبليـغ حكم غيابـي إبتـدائـي نهائـي", "محضـر تبليـغ حكم غيابـي نهائـي","محضـر تبليــغ أمــر  استعجالي","محضـر تبليــغ أمــر  استعجالي غيابي","محضر تبليــغ قـــرار غيـابـي");
+        combo_المحضر.getItems().addAll("التكليف بالحضور مع التسليم", "محضـر تبليــغ حكم حضـوري", "محضـر تبليــغ حكم غيابي", "محضـر تبليـغ حكم حضـوري إبتدائي نهائـي", "محضـر تبليـغ حكم غيابـي إبتـدائـي نهائـي", "محضـر تبليـغ حكم غيابـي نهائـي","محضـر تبليــغ أمــر  استعجالي","محضـر تبليــغ أمــر  استعجالي غيابي","محضر تبليــغ قـــرار غيـابـي","محضـر تبليــغ قـــرار حضـوري","محضر تبليغ حكــم إداري حضــوري","تبليــغ حكــم إداري غيابي");
     }
 
 }

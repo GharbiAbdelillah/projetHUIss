@@ -244,9 +244,9 @@ public class Mahder_tabligh_9arar_ghiyabiController implements Initializable {
             case "محضر تبليــغ قـــرار غيـابـي":
                 is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tabligh_9arar_ghiyabi/Mahder_tabligh_9arar_ghiyabi.jrxml");
                 break;
-//            case "محضـر تبليــغ أمــر  استعجالي غيابي":
-//                is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tabligh_Amre_Isti3jali_Ghiyabi/Mahder_tabligh_Amre_Isti3jali_Ghiyabi.jrxml");
-//                break;
+            case "محضـر تبليــغ قـــرار حضـوري":
+                is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tabligh_9arar_7odori/Mahder_tabligh_9arar_7odori.jrxml");
+                break;
           
         }
 

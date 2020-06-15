@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="huissier_de_justice.jar" size="7670720" download="eager" />
+    <jar href="huissier_de_justice.jar" size="7698909" download="eager" />
     <jar href="lib\com.lowagie.text-2.1.7.jar" size="1782376" download="eager" />
     <jar href="lib\commons-collections-3.2.1-1.0.0.jar" size="590365" download="eager" />
     <jar href="lib\commons-digester-2.1.jar" size="196768" download="eager" />

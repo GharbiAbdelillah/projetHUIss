@@ -10,7 +10,10 @@ import BDConnection.ConnectionSQLITE;
 import static Login.loginController.accueilStage;
 import el_Archive.archiveList.viewArchiveList;
 import el_Mahadir.tablighe.Mahder_tabligh_7okm_7dori.Mahder_tabligh_7okm_7doriController_1;
+import el_Mahadir.tablighe.Mahder_tabligh_7okm_Idari_7odori.Mahder_tabligh_7okm_Idari_7odoriController_1;
 import el_Mahadir.tablighe.Mahder_tabligh_7okm_ghiyabi.Mahder_tabligh_7okm_ghiyabiController_1;
+import el_Mahadir.tablighe.Mahder_tabligh_9arar_ghiyabi.Mahder_tabligh_9arar_ghiyabiController;
+import el_Mahadir.tablighe.Mahder_tabligh_9arar_ghiyabi.Mahder_tabligh_9arar_ghiyabiController_1;
 import el_Mahadir.tablighe.Mahder_tabligh_Amre_Isti3jali.Mahder_tabligh_Amre_Isti3jaliController_1;
 import static huissier_de_justice.StackPaneController.stackContent;
 import static huissier_de_justice.main.logStage;
@@ -136,7 +139,19 @@ public class Tek_TableViewController implements Initializable {
 
                     break;
                 case "محضر تبليــغ قـــرار غيـابـي":
-                    showTabligh_Amre_Isti3jali("محضر تبليــغ قـــرار غيـابـي");
+                    showTabligh_9arar_Ghiyabi("محضر تبليــغ قـــرار غيـابـي");
+
+                    break;
+                case "محضـر تبليــغ قـــرار حضـوري":
+                    showTabligh_9arar_Ghiyabi("محضـر تبليــغ قـــرار حضـوري");
+
+                    break;
+                case "محضر تبليغ حكــم إداري حضــوري":
+                    showTabligh_7okm_Idari("محضر تبليغ حكــم إداري حضــوري");
+
+                    break;
+                case "تبليــغ حكــم إداري غيابي":
+                    showTabligh_7okm_Idari("تبليــغ حكــم إداري غيابي");
 
                     break;
             }
@@ -280,6 +295,98 @@ public class Tek_TableViewController implements Initializable {
         stage.showAndWait();
         anchorPane.setOpacity(1);
     }
+//////////////////////////////////// tabligh (04) 9arar ///////////////////////////////////////////////
+
+    private void showTabligh_9arar_Ghiyabi(String choose) throws SQLException, IOException {
+        anchorPane.setOpacity(0.4);
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_9arar_ghiyabi/Mahder_tabligh_9arar_ghiyabi_1.fxml"));
+        fxmlLoader.load();
+        String sql = "select * from tabligh where num_file ='" + table_التكليف.getSelectionModel().getSelectedItem().getColumn_الملف() + "' and num_Annee ='" + table_التكليف.getSelectionModel().getSelectedItem().getColumn_رقم_العام() + "' ";
+        ps = conn.prepareStatement(sql);
+        rs = ps.executeQuery();
+        Mahder_tabligh_9arar_ghiyabiController_1 tablighController = fxmlLoader.getController();
+        while (rs.next()) {
+
+            tablighController.tf_رقم_الملف.setText(rs.getString(1));
+            tablighController.tf_رقم_العام.setText(rs.getString(2));
+            tablighController.tf_المحكمة.setText(rs.getString(4));
+            tablighController.tf_قسم.setText(rs.getString(5));
+            tablighController.dp_تاريخ.setValue(LocalDate.parse(rs.getString(6)));
+            tablighController.tf_رقم_الفهرس.setText(rs.getString(7));
+            tablighController.tf_رقم_الجدول.setText(rs.getString(8));
+            tablighController.tf_السيد.setText(rs.getString(9));
+            tablighController.tf_المحامي.setText(rs.getString(10));
+            tablighController.tf_سكن_الطالب.setText(rs.getString(11));
+            tablighController.tf_المطلوب.setText(rs.getString(12));
+            tablighController.tf_سكن_المطلوب.setText(rs.getString(13));
+            tablighController.choose_تبليغ.setText(choose);
+            if (rs.getString(14).equals("محكمة")) {
+                tablighController.lbl_قسم.setText("قسم :");
+                tablighController.lbl_الجدول.setText("رقم الجدول:");
+            } else {
+                tablighController.lbl_قسم.setText("غرفة:");
+                tablighController.lbl_الجدول.setText("رقم القضية:");
+            }
+        }
+
+        ps.close();
+        rs.close();
+        Parent root = fxmlLoader.getRoot();
+        Scene scene = new Scene(root);
+        scene.setFill(new Color(0, 0, 0, 0));
+        stage.setScene(scene);
+        tablighController.btn_modifier.setVisible(true);
+        tablighController.btnPrint.setVisible(true);
+        stage.showAndWait();
+        anchorPane.setOpacity(1);
+    }
+//////////////////////////////////// tabligh (05) 7okm Idari ///////////////////////////////////////////////
+
+    private void showTabligh_7okm_Idari(String choose) throws SQLException, IOException {
+        anchorPane.setOpacity(0.4);
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_7okm_Idari_7odori/Mahder_tabligh_7okm_Idari_7odori_1.fxml"));
+        fxmlLoader.load();
+        String sql = "select * from tabligh where num_file ='" + table_التكليف.getSelectionModel().getSelectedItem().getColumn_الملف() + "' and num_Annee ='" + table_التكليف.getSelectionModel().getSelectedItem().getColumn_رقم_العام() + "' ";
+        ps = conn.prepareStatement(sql);
+        rs = ps.executeQuery();
+        Mahder_tabligh_7okm_Idari_7odoriController_1 tablighController = fxmlLoader.getController();
+        while (rs.next()) {
+
+            tablighController.tf_رقم_الملف.setText(rs.getString(1));
+            tablighController.tf_رقم_العام.setText(rs.getString(2));
+            tablighController.tf_المحكمة.setText(rs.getString(4));
+            tablighController.tf_قسم.setText(rs.getString(5));
+            tablighController.dp_تاريخ.setValue(LocalDate.parse(rs.getString(6)));
+            tablighController.tf_رقم_الفهرس.setText(rs.getString(7));
+            tablighController.tf_رقم_الجدول.setText(rs.getString(8));
+            tablighController.tf_السيد.setText(rs.getString(9));
+            tablighController.tf_المحامي.setText(rs.getString(10));
+            tablighController.tf_سكن_الطالب.setText(rs.getString(11));
+            tablighController.tf_المطلوب.setText(rs.getString(12));
+            tablighController.tf_سكن_المطلوب.setText(rs.getString(13));
+            tablighController.choose_تبليغ.setText(choose);
+            if (rs.getString(14).equals("محكمة")) {
+                tablighController.lbl_قسم.setText("قسم :");
+                tablighController.lbl_الجدول.setText("رقم الجدول:");
+            } else {
+                tablighController.lbl_قسم.setText("غرفة:");
+                tablighController.lbl_الجدول.setText("رقم القضية:");
+            }
+        }
+
+        ps.close();
+        rs.close();
+        Parent root = fxmlLoader.getRoot();
+        Scene scene = new Scene(root);
+        scene.setFill(new Color(0, 0, 0, 0));
+        stage.setScene(scene);
+        tablighController.btn_modifier.setVisible(true);
+        tablighController.btnPrint.setVisible(true);
+        stage.showAndWait();
+        anchorPane.setOpacity(1);
+    }
 
     ///////////////////////////////////////////////////////  modifie taklifat   ///////////////////////////////
     private void showTaklif() throws SQLException, IOException {
@@ -383,21 +490,50 @@ public class Tek_TableViewController implements Initializable {
 
     }
 
+    private void uploadTableTablighat(String sql) throws SQLException {
+        table_التكليف.getItems().clear();
+        ps = conn.prepareStatement(sql);
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            viewArchiveList Archive = new viewArchiveList();
+            Archive.setColumn_الملف(rs.getString(1));
+            Archive.setColumn_رقم_العام(rs.getString(2));
+            Archive.setColumn_نوع_المحضر(rs.getString(3));
+            Archive.setColumn_الجلسة(rs.getString(6));
+            Archive.setColumn_المخاطب(rs.getString(9));
+            Archive.setColumn_المطلوب(rs.getString(12));
+            listArchive.add(Archive);
+            table_التكليف.setItems(listArchive);
+        }
+        ps.close();
+        rs.close();
+
+    }
+
     @FXML
     private void reload() throws SQLException {
         String sql = "";
         if (combo_المحاضر.getValue().equals("التكليف بالحضور")) {
             sql = "select * from mahadir order by num_file Asc";
+            uploadTableMilafat(sql);
         } else if (combo_المحاضر.getValue().equals("تبليغات")) {
             sql = "select * from tabligh order by num_file Asc";
+            uploadTableTablighat(sql);
         }
-        uploadTableMilafat(sql);
+
     }
 
     @FXML
     private void search() throws SQLException {
-        String sql = "select * from mahadir where person like '%" + tf_cherchPerson.getText() + "%' order by num_file";
-        uploadTableMilafat(sql);
+        String sql = "";
+        if (combo_المحاضر.getValue().equals("التكليف بالحضور")) {
+            sql = "select * from mahadir where person like '%" + tf_cherchPerson.getText() + "%' order by num_file";
+            uploadTableMilafat(sql);
+        } else if (combo_المحاضر.getValue().equals("تبليغات")) {
+            sql = "select * from tabligh where person like '%" + tf_cherchPerson.getText() + "%' order by num_file";
+            uploadTableTablighat(sql);
+        }
+
     }
 
     @FXML

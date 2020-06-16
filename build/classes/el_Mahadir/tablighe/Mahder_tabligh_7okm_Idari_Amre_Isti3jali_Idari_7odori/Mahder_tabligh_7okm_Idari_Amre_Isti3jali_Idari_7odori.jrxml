@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="410892f8-734c-4c08-b679-b17387b78694">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="271"/>
+	<parameter name="السيد" class="java.lang.String"/>
+	<parameter name="avocat" class="java.lang.String"/>
+	<parameter name="lieuPerson" class="java.lang.String"/>
+	<parameter name="suspect" class="java.lang.String"/>
+	<parameter name="lieuSuspect" class="java.lang.String"/>
+	<parameter name="محكمة" class="java.lang.String"/>
+	<parameter name="قسم" class="java.lang.String"/>
+	<parameter name="رقم_الملف" class="java.lang.String"/>
+	<parameter name="رقم_العام" class="java.lang.String"/>
+	<parameter name="type_قسم" class="java.lang.String"/>
+	<parameter name="تاريخ1" class="java.lang.String"/>
+	<parameter name="رقم_الفهرس" class="java.lang.String"/>
+	<parameter name="type_جدول" class="java.lang.String"/>
+	<parameter name="جدول" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="208" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="439" height="39" uuid="d71a2cee-0441-4c9c-a15d-14d9f29c9e2c"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[الجمهوريـة الجزائريـة الديمقراطيـة الشعبيـة]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="362" y="52" width="181" height="22" uuid="5dd0926a-41b8-47a7-811a-8176988984c6"/>
+				<textElement textAlignment="Right">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[الديوان العمومي للمحضر القضائي]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="362" y="74" width="181" height="21" uuid="d227ff27-25d2-4e59-8873-f4d29e466271"/>
+				<textElement textAlignment="Right">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[الأستـــــاذ طلحة محــمــد]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="95" width="205" height="22" uuid="9b572e42-b3c5-4368-b008-f22204466558"/>
+				<textElement textAlignment="Right">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[محضر قضائي لدى محكمة حمام بوحجر]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="117" width="195" height="22" uuid="866f7f8b-c0a5-44fa-a773-1aff3eb0b197"/>
+				<textElement textAlignment="Right">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[إختصاص مجلس قضاء عين تموشنت]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="306" y="139" width="237" height="43" uuid="b0ac6310-03af-4984-95f1-c03574f6fca7"/>
+				<textElement textAlignment="Right">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[و الكائن مكتبه بــ: حي 178 مسكن تساهمي
+بركة دائرة حمام بوحجر]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="357" y="182" width="186" height="22" uuid="955817fe-0ee7-4655-a667-3cb323e9b477"/>
+				<textElement textAlignment="Right">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[الهاتف/الفاكس:57-76-71-043]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="91" splitType="Stretch">
+			<staticText>
+				<reportElement x="-9" y="3" width="466" height="70" uuid="7d06e7fc-8ae2-4170-a4a1-03fab71f26cb"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[محضـر تبليـغ أمر استعجالي اداري حضوري
+المــادة :950 من قانــون الإجــراءات المدنيــةوالإداريـــة]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="503" splitType="Stretch">
+			<line>
+				<reportElement x="448" y="-12" width="1" height="429" uuid="e3579c36-3ad7-4c4c-ad4e-522470e5c7ee"/>
+			</line>
+			<staticText>
+				<reportElement x="390" y="3" width="47" height="20" uuid="7360711e-6214-43ec-b99f-48c8bebd309d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[بتـــاريخ :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="226" y="3" width="53" height="20" uuid="533c68b2-aee6-48f3-ae6f-dd19ce49082d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[من شهر :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="88" y="3" width="58" height="20" uuid="c37bdd68-a58c-4bbf-9284-0b1b9debfd0c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[سنة ألفين و]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="364" y="24" width="74" height="20" uuid="529471e0-6d77-4380-9a06-c2c2be4db5f0"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[وعلى الساعة :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="46" width="433" height="20" uuid="65ba713f-aec1-432f-9103-67948c4b0ab9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[نحن الأستاذ طلحة محـمـد محضر قضائي لدى محكمة حمام بوحجر مجلس قضاء عين تموشنت.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="243" width="59" height="20" uuid="a9cdb833-a4b9-4b92-8d00-247ae3389735"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[إلى السيد (ة) :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="67" width="393" height="20" uuid="5c5f3bbd-ea51-42bb-a1fd-6a4874e1643e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[المـــوقـــــع أدنــــــاه ______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="87" width="393" height="20" uuid="b83dc392-4f7b-4440-95c7-4b5fcd7fac9a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[الكائن مكتبه بـ بحي 178 مسكن تساهمي بركة دائرة حمام بوحجر]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="339" y="107" width="98" height="23" uuid="9da135a8-e274-4077-97f8-730f18ef1156"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[وبطلب من  السيد (ة) :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="107" width="44" height="23" uuid="bb85a9e9-2e95-49be-8718-a2968f6ec0e4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[بواسطة :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="130" width="59" height="20" uuid="2a5b91e4-3829-4a51-b283-5586e27be28f"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[الســـــاكـــن :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="150" width="433" height="30" uuid="dcae5a2c-d49a-4f16-949b-cd9fac47b3d5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[بعد الاطلاع على المواد:313، 322، 405، 406، 407 ،416 ،950 من ق.إ.م.إ.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="264" width="67" height="20" uuid="1c6632ef-e9a6-4a3b-9a1e-a0c97c97b732"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[الســـــاكـــن(ة) :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="200" width="59" height="24" uuid="ee6e4767-3380-4c22-a39c-aa3b772f2b0a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[رقم الفهرس :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="201" width="33" height="23" uuid="80fa74d4-c88f-4766-b1ad-529bb59e1087"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[بتاريخ :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="25" y="451" width="92" height="40" uuid="71b3cde4-5eee-4f3b-9962-dcf46c46bef1"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[المحضر القضائي]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="388" width="135" height="28" uuid="d56a783a-c6f5-44fb-b583-65ee8e6b46d4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="15" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[لكي لا يجـهـل ما تقدم]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-19" y="416" width="462" height="33" uuid="3c5dcfa3-f231-49be-a1ab-7005af6fee01"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[إثبـاتـا لمـــا تقـدم حررنـا هـذا المحضـر فـي اليـوم والشـهـر والسنـة والساعـــة المذكــوريـــن أعـــلاه 
+طبقـــا للقانـــون ـــــــــ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="173" y="451" width="105" height="40" uuid="a59d76c2-5cf7-4cd3-a5e8-6b67e19eb0fb"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[عون التبليغ المحلف]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="306" y="451" width="131" height="40" uuid="0ca9b6c6-c182-4809-9249-7d68292dd607"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[توقيع أوبصمة المبلغ له]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="524" y="31" width="50" height="20" uuid="c3321b9a-1cfc-42e5-8370-9499e7f389e4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[رقم الملف:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="513" y="66" width="61" height="20" uuid="dfd83d65-e1fa-402f-9fe8-3929cf8729d8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[رقم الفهرس:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="107" width="127" height="23" uuid="7434e569-4b0b-424b-85e4-73df8600895d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{السيد}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="130" width="332" height="20" uuid="e421422f-48aa-4703-9f5d-4a4b56a11978"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{lieuPerson}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="115" y="243" width="263" height="23" uuid="98761ec4-7797-4cca-b9c9-b32fed849733"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{suspect}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="25" y="264" width="345" height="23" uuid="944fdeb3-91c3-4991-9412-de35c5c3c0eb"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{lieuSuspect}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="294" y="201" width="110" height="23" uuid="04e9efce-807a-4ab8-9e23-6cbb2b8d81ee"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{قسم}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="31" width="52" height="20" uuid="ed22518d-e20d-4381-8940-191d60e99ca1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{رقم_الملف}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="451" y="66" width="17" height="20" uuid="22772c30-119f-4cac-bed0-7cf539784bc8"/>
+				<textElement textAlignment="Right">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{رقم_العام}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="451" y="31" width="17" height="20" uuid="4fbc7724-8174-4969-9e94-ea6ee32b563a"/>
+				<textElement textAlignment="Right">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{رقم_العام}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="468" y="65" width="4" height="20" uuid="515218ba-a130-4f72-a80c-3ed6deb6d1fe"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="468" y="30" width="4" height="20" uuid="556dce6b-8a9c-4bb7-aae5-cb18ab2d5cdd"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="404" y="201" width="33" height="23" uuid="412408f3-f03b-4d92-aefb-67674657e84b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{type_قسم}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="222" y="180" width="215" height="21" uuid="ec904bf8-5cb8-4634-a55a-99827e5fef99"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[بلغنا بنسخة من الحكم الإداري الحضوري الصادر عن :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="31" y="180" width="190" height="23" uuid="770d96f4-7659-475d-9c10-6ab2223cb103"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{محكمة}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-9" y="284" width="447" height="119" uuid="89b924d9-a1cc-4349-b561-9d6985c6df8b"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[مخـاطـبين/                              حسب تصريحه: 
+ الحامل (لبطاقة التعريف) :                                   رقــم :....................        الصادرة عن :                      بتاريخ: 
+و اعلمناه بان اجل العارضة محدد بشهر واحد (01) ابتداء من تاريخ التبليغ الحكم طبقا للمادة 954 من ق.إ.م.إ .
+كما اعلمناه بان اجل الاستئناف محدد بشهرين(02) ابتداء من تاريخ انقضاء المعارضة طبقا للمادة 950 من ق.إ.م.إ
+و اعلمناه بان اجل استئناف محدد بخمسة عشرة يوما (15) ابتداء من تاريخ التبليغ للمعني طبقا للمادة 950 من قانون الإجراءات المدنية و الإدارية]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="201" width="100" height="23" uuid="9780ce50-8608-4f64-b5e7-d16b1b0f0aee"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{تاريخ1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-5" y="200" width="100" height="23" uuid="9b0c412f-a0d2-4431-856a-e27baa919f98"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{رقم_الفهرس}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="357" y="223" width="78" height="20" uuid="44f544fe-07ce-48f0-8a36-a59c5b7cd8ce"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{type_جدول}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="88" y="223" width="262" height="23" uuid="a0511ce6-8bc9-4002-a6af-2183ba8946df"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{جدول}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="107" width="139" height="23" uuid="f7f669b7-d647-40b6-8cf2-d96ff3893369"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{avocat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -189,6 +189,9 @@ public class Mahder_tabligh_7okm_Idari_7odoriController_1 implements Initializab
             case "تبليــغ حكــم إداري غيابي":
                 is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tabligh_7okm_Idari_Ghiyabi/Mahder_tabligh_7okm_Idari_Ghiyabi.jrxml");
                 break;
+            case "محضـر تبليـغ أمر استعجالي اداري حضوري":
+                is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tabligh_7okm_Idari_Amre_Isti3jali_Idari_7odori/Mahder_tabligh_7okm_Idari_Amre_Isti3jali_Idari_7odori.jrxml");
+                break;
         }
 
         JasperReport jr = JasperCompileManager.compileReport(is);

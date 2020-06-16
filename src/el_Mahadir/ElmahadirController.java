@@ -12,6 +12,7 @@ import el_Mahadir.tablighe.Mahder_tabligh_7okm_Idari_7odori.Mahder_tabligh_7okm_
 import el_Mahadir.tablighe.Mahder_tabligh_7okm_ghiyabi.Mahder_tabligh_7okm_ghiyabiController;
 import el_Mahadir.tablighe.Mahder_tabligh_9arar_ghiyabi.Mahder_tabligh_9arar_ghiyabiController;
 import el_Mahadir.tablighe.Mahder_tabligh_Amre_Isti3jali.Mahder_tabligh_Amre_Isti3jaliController;
+import el_Mahadir.tablighe.Mahder_tabligh_tasri7_Elta3n_biNNa9d.Mahder_tabligh_tasri7_Elta3n_biNNa9dController;
 import static huissier_de_justice.StackPaneController.stackContent;
 import java.io.IOException;
 import java.net.URL;
@@ -50,6 +51,7 @@ public class ElmahadirController implements Initializable {
         Mahder_tabligh_Amre_Isti3jaliController tabligh_Isti3jali;
         Mahder_tabligh_9arar_ghiyabiController tabligh_9arar;
         Mahder_tabligh_7okm_Idari_7odoriController tabligh_Idari;
+        Mahder_tabligh_tasri7_Elta3n_biNNa9dController tabligh_Ta3n;
 
         if (!combo_المحضر.getValue().equals(null)) {
             switch (combo_المحضر.getValue()) {
@@ -181,6 +183,28 @@ public class ElmahadirController implements Initializable {
                     tabligh_Idari.choose_تبليغ.setText("تبليــغ حكــم إداري غيابي");
 
                     break;
+                    case "محضـر تبليـغ أمر استعجالي اداري حضوري":
+
+                    fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_7okm_Idari_7odori/Mahder_tabligh_7okm_Idari_7odori.fxml"));
+
+                    accueilStage.setTitle("محضـر تبليـغ أمر استعجالي اداري حضوري");
+                    stackContent.getChildren().clear();
+                    stackContent.getChildren().add(fxmlLoader.load());
+                    tabligh_Idari = fxmlLoader.getController();
+                    tabligh_Idari.choose_تبليغ.setText("محضـر تبليـغ أمر استعجالي اداري حضوري");
+
+                    break;
+                    case "تبليــغ محضر تصريح الطعن بالنقض":
+
+                    fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_tasri7_Elta3n_biNNa9d/Mahder_tabligh_tasri7_Elta3n_biNNa9d.fxml"));
+
+                    accueilStage.setTitle("تبليــغ محضر تصريح الطعن بالنقض");
+                    stackContent.getChildren().clear();
+                    stackContent.getChildren().add(fxmlLoader.load());
+                    tabligh_Ta3n = fxmlLoader.getController();
+                    tabligh_Ta3n.choose_تبليغ.setText("تبليــغ محضر تصريح الطعن بالنقض");
+
+                    break;
             }
 
             stage2.close();
@@ -192,7 +216,7 @@ public class ElmahadirController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        combo_المحضر.getItems().addAll("التكليف بالحضور مع التسليم", "محضـر تبليــغ حكم حضـوري", "محضـر تبليــغ حكم غيابي", "محضـر تبليـغ حكم حضـوري إبتدائي نهائـي", "محضـر تبليـغ حكم غيابـي إبتـدائـي نهائـي", "محضـر تبليـغ حكم غيابـي نهائـي","محضـر تبليــغ أمــر  استعجالي","محضـر تبليــغ أمــر  استعجالي غيابي","محضر تبليــغ قـــرار غيـابـي","محضـر تبليــغ قـــرار حضـوري","محضر تبليغ حكــم إداري حضــوري","تبليــغ حكــم إداري غيابي");
+        combo_المحضر.getItems().addAll("التكليف بالحضور مع التسليم", "محضـر تبليــغ حكم حضـوري", "محضـر تبليــغ حكم غيابي", "محضـر تبليـغ حكم حضـوري إبتدائي نهائـي", "محضـر تبليـغ حكم غيابـي إبتـدائـي نهائـي", "محضـر تبليـغ حكم غيابـي نهائـي","محضـر تبليــغ أمــر  استعجالي","محضـر تبليــغ أمــر  استعجالي غيابي","محضر تبليــغ قـــرار غيـابـي","محضـر تبليــغ قـــرار حضـوري","محضر تبليغ حكــم إداري حضــوري","تبليــغ حكــم إداري غيابي","محضـر تبليـغ أمر استعجالي اداري حضوري","تبليــغ محضر تصريح الطعن بالنقض");
     }
 
 }

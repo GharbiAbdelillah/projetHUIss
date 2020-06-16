@@ -15,6 +15,7 @@ import el_Mahadir.tablighe.Mahder_tabligh_7okm_ghiyabi.Mahder_tabligh_7okm_ghiya
 import el_Mahadir.tablighe.Mahder_tabligh_9arar_ghiyabi.Mahder_tabligh_9arar_ghiyabiController;
 import el_Mahadir.tablighe.Mahder_tabligh_9arar_ghiyabi.Mahder_tabligh_9arar_ghiyabiController_1;
 import el_Mahadir.tablighe.Mahder_tabligh_Amre_Isti3jali.Mahder_tabligh_Amre_Isti3jaliController_1;
+import el_Mahadir.tablighe.Mahder_tabligh_tasri7_Elta3n_biNNa9d.Mahder_tabligh_tasri7_Elta3n_biNNa9dController_1;
 import static huissier_de_justice.StackPaneController.stackContent;
 import static huissier_de_justice.main.logStage;
 import java.io.IOException;
@@ -152,6 +153,14 @@ public class Tek_TableViewController implements Initializable {
                     break;
                 case "تبليــغ حكــم إداري غيابي":
                     showTabligh_7okm_Idari("تبليــغ حكــم إداري غيابي");
+
+                    break;
+                case "محضـر تبليـغ أمر استعجالي اداري حضوري":
+                    showTabligh_7okm_Idari("محضـر تبليـغ أمر استعجالي اداري حضوري");
+
+                    break;
+                case "تبليــغ محضر تصريح الطعن بالنقض":
+                    showTabligh_7okm_Ta3n("تبليــغ محضر تصريح الطعن بالنقض");
 
                     break;
             }
@@ -373,6 +382,51 @@ public class Tek_TableViewController implements Initializable {
             } else {
                 tablighController.lbl_قسم.setText("غرفة:");
                 tablighController.lbl_الجدول.setText("رقم القضية:");
+            }
+        }
+
+        ps.close();
+        rs.close();
+        Parent root = fxmlLoader.getRoot();
+        Scene scene = new Scene(root);
+        scene.setFill(new Color(0, 0, 0, 0));
+        stage.setScene(scene);
+        tablighController.btn_modifier.setVisible(true);
+        tablighController.btnPrint.setVisible(true);
+        stage.showAndWait();
+        anchorPane.setOpacity(1);
+    }
+    ///////////////////////////////////////// tabligh (06) 7okm ta3n ////////////////////////////
+private void showTabligh_7okm_Ta3n(String choose) throws SQLException, IOException {
+        anchorPane.setOpacity(0.4);
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_tasri7_Elta3n_biNNa9d/Mahder_tabligh_tasri7_Elta3n_biNNa9d_1.fxml"));
+        fxmlLoader.load();
+        String sql = "select * from tabligh where num_file ='" + table_التكليف.getSelectionModel().getSelectedItem().getColumn_الملف() + "' and num_Annee ='" + table_التكليف.getSelectionModel().getSelectedItem().getColumn_رقم_العام() + "' ";
+        ps = conn.prepareStatement(sql);
+        rs = ps.executeQuery();
+        Mahder_tabligh_tasri7_Elta3n_biNNa9dController_1 tablighController = fxmlLoader.getController();
+        while (rs.next()) {
+
+            tablighController.tf_رقم_الملف.setText(rs.getString(1));
+            tablighController.tf_رقم_العام.setText(rs.getString(2));
+            tablighController.tf_المحكمة.setText(rs.getString(4));
+            //tablighController.tf_قسم.setText(rs.getString(5));
+            tablighController.dp_تاريخ.setValue(LocalDate.parse(rs.getString(6)));
+            tablighController.tf_رقم_الفهرس.setText(rs.getString(7));
+           // tablighController.tf_رقم_الجدول.setText(rs.getString(8));
+            tablighController.tf_السيد.setText(rs.getString(9));
+            tablighController.tf_المحامي.setText(rs.getString(10));
+            tablighController.tf_سكن_الطالب.setText(rs.getString(11));
+            tablighController.tf_المطلوب.setText(rs.getString(12));
+            //tablighController.tf_سكن_المطلوب.setText(rs.getString(13));
+            tablighController.choose_تبليغ.setText(choose);
+            if (rs.getString(14).equals("محكمة")) {
+              //  tablighController.lbl_قسم.setText("قسم :");
+                //tablighController.lbl_الجدول.setText("رقم الجدول:");
+            } else {
+                //tablighController.lbl_قسم.setText("غرفة:");
+               // tablighController.lbl_الجدول.setText("رقم القضية:");
             }
         }
 

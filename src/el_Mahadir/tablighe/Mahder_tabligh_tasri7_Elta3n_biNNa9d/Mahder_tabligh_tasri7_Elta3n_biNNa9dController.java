@@ -235,9 +235,9 @@ public class Mahder_tabligh_tasri7_Elta3n_biNNa9dController implements Initializ
             case "تبليــغ محضر تصريح الطعن بالنقض":
                 is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tabligh_tasri7_Elta3n_biNNa9d/Mahder_tabligh_tasri7_Elta3n_biNNa9d.jrxml");
                 break;
-//            case "محضـر تبليــغ قـــرار حضـوري":
-//                is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tabligh_9arar_7odori/Mahder_tabligh_9arar_7odori.jrxml");
-//                break;
+            case "محضر تبليغ عريضة الطعن بالنقض":
+                is = this.getClass().getResourceAsStream("/el_Mahadir/tablighe/Mahder_tablighe_3aridt_ta3nne_biNNa9d/Mahder_tablighe_3aridt_ta3nne_biNNa9d.jrxml");
+                break;
 //          
         }
 

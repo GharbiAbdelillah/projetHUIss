@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="410892f8-734c-4c08-b679-b17387b78694">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="227"/>
+	<property name="ireport.y" value="271"/>
 	<parameter name="السيد" class="java.lang.String"/>
 	<parameter name="avocat" class="java.lang.String"/>
 	<parameter name="lieuPerson" class="java.lang.String"/>
@@ -298,7 +298,7 @@
 				<text><![CDATA[بلغنا وسلمنا نسخة من محضر التصريح بالطعن بالنقض أمام]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="19" y="180" width="186" height="23" uuid="770d96f4-7659-475d-9c10-6ab2223cb103"/>
+				<reportElement x="-19" y="180" width="224" height="23" uuid="770d96f4-7659-475d-9c10-6ab2223cb103"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>

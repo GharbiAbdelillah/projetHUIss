@@ -5,9 +5,11 @@
  */
 package el_Mahadir;
 
+import BDConnection.ConnectionSQLITE;
 import el_Mahadir.tablighe.Mahder_tabligh_7okm_7dori.*;
 import static Login.loginController.accueilStage;
 import static dashboard.AccueilController.stage2;
+import el_Mahadir.List.mahadirList;
 import el_Mahadir.tablighe.Mahder_tabligh_7okm_Idari_7odori.Mahder_tabligh_7okm_Idari_7odoriController;
 import el_Mahadir.tablighe.Mahder_tabligh_7okm_ghiyabi.Mahder_tabligh_7okm_ghiyabiController;
 import el_Mahadir.tablighe.Mahder_tabligh_9arar_ghiyabi.Mahder_tabligh_9arar_ghiyabiController;
@@ -16,13 +18,24 @@ import el_Mahadir.tablighe.Mahder_tabligh_tasri7_Elta3n_biNNa9d.Mahder_tabligh_t
 import static huissier_de_justice.StackPaneController.stackContent;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
@@ -32,15 +45,44 @@ import javafx.stage.Stage;
  */
 public class ElmahadirController implements Initializable {
 
+    Connection conn;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+
+    ObservableList<mahadirList> listMahder;
+
     @FXML
     private ComboBox<String> combo_المحضر;
     @FXML
     private Button btnClose;
+    @FXML
+    private TableView<mahadirList> table_المحاضر;
+    @FXML
+    private TableColumn<mahadirList, String> column_المحاضر;
 
     @FXML
     private void quit(ActionEvent event) {
         Stage stage = (Stage) btnClose.getScene().getWindow();
         stage.close();
+    }
+
+    public void initTable() {
+        column_المحاضر.setCellValueFactory(new PropertyValueFactory<mahadirList, String>("column_المحاضر"));
+    }
+
+    public void uploadTable() throws SQLException {
+        table_المحاضر.getItems().clear();
+        String sql = "select * from anwa3_Elmahadir";
+        ps = conn.prepareStatement(sql);
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            mahadirList search = new mahadirList();
+            search.setColumn_المحاضر(rs.getString(3));
+            listMahder.add(search);
+            table_المحاضر.setItems(listMahder);
+        }
+        ps.close();
+        rs.close();
     }
 
     @FXML
@@ -128,7 +170,7 @@ public class ElmahadirController implements Initializable {
                     tabligh_Isti3jali.choose_تبليغ.setText("محضـر تبليــغ أمــر  استعجالي");
 
                     break;
-                    case "محضـر تبليــغ أمــر  استعجالي غيابي":
+                case "محضـر تبليــغ أمــر  استعجالي غيابي":
 
                     fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_Amre_Isti3jali/Mahder_tabligh_Amre_Isti3jali.fxml"));
 
@@ -139,7 +181,7 @@ public class ElmahadirController implements Initializable {
                     tabligh_Isti3jali.choose_تبليغ.setText("محضـر تبليــغ أمــر  استعجالي غيابي");
 
                     break;
-                    case "محضر تبليــغ قـــرار غيـابـي":
+                case "محضر تبليــغ قـــرار غيـابـي":
 
                     fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_9arar_ghiyabi/Mahder_tabligh_9arar_ghiyabi.fxml"));
 
@@ -150,7 +192,7 @@ public class ElmahadirController implements Initializable {
                     tabligh_9arar.choose_تبليغ.setText("محضر تبليــغ قـــرار غيـابـي");
 
                     break;
-                    case "محضـر تبليــغ قـــرار حضـوري":
+                case "محضـر تبليــغ قـــرار حضـوري":
 
                     fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_9arar_ghiyabi/Mahder_tabligh_9arar_ghiyabi.fxml"));
 
@@ -161,7 +203,7 @@ public class ElmahadirController implements Initializable {
                     tabligh_9arar.choose_تبليغ.setText("محضـر تبليــغ قـــرار حضـوري");
 
                     break;
-                    case "محضر تبليغ حكــم إداري حضــوري":
+                case "محضر تبليغ حكــم إداري حضــوري":
 
                     fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_7okm_Idari_7odori/Mahder_tabligh_7okm_Idari_7odori.fxml"));
 
@@ -172,7 +214,7 @@ public class ElmahadirController implements Initializable {
                     tabligh_Idari.choose_تبليغ.setText("محضر تبليغ حكــم إداري حضــوري");
 
                     break;
-                    case "تبليــغ حكــم إداري غيابي":
+                case "تبليــغ حكــم إداري غيابي":
 
                     fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_7okm_Idari_7odori/Mahder_tabligh_7okm_Idari_7odori.fxml"));
 
@@ -183,7 +225,7 @@ public class ElmahadirController implements Initializable {
                     tabligh_Idari.choose_تبليغ.setText("تبليــغ حكــم إداري غيابي");
 
                     break;
-                    case "محضـر تبليـغ أمر استعجالي اداري حضوري":
+                case "محضـر تبليـغ أمر استعجالي اداري حضوري":
 
                     fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_7okm_Idari_7odori/Mahder_tabligh_7okm_Idari_7odori.fxml"));
 
@@ -194,7 +236,7 @@ public class ElmahadirController implements Initializable {
                     tabligh_Idari.choose_تبليغ.setText("محضـر تبليـغ أمر استعجالي اداري حضوري");
 
                     break;
-                    case "تبليــغ محضر تصريح الطعن بالنقض":
+                case "تبليــغ محضر تصريح الطعن بالنقض":
 
                     fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_tasri7_Elta3n_biNNa9d/Mahder_tabligh_tasri7_Elta3n_biNNa9d.fxml"));
 
@@ -203,6 +245,17 @@ public class ElmahadirController implements Initializable {
                     stackContent.getChildren().add(fxmlLoader.load());
                     tabligh_Ta3n = fxmlLoader.getController();
                     tabligh_Ta3n.choose_تبليغ.setText("تبليــغ محضر تصريح الطعن بالنقض");
+
+                    break;
+                case "محضر تبليغ عريضة الطعن بالنقض":
+
+                    fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/tablighe/Mahder_tabligh_tasri7_Elta3n_biNNa9d/Mahder_tabligh_tasri7_Elta3n_biNNa9d.fxml"));
+
+                    accueilStage.setTitle("محضر تبليغ عريضة الطعن بالنقض");
+                    stackContent.getChildren().clear();
+                    stackContent.getChildren().add(fxmlLoader.load());
+                    tabligh_Ta3n = fxmlLoader.getController();
+                    tabligh_Ta3n.choose_تبليغ.setText("محضر تبليغ عريضة الطعن بالنقض");
 
                     break;
             }
@@ -216,7 +269,22 @@ public class ElmahadirController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        combo_المحضر.getItems().addAll("التكليف بالحضور مع التسليم", "محضـر تبليــغ حكم حضـوري", "محضـر تبليــغ حكم غيابي", "محضـر تبليـغ حكم حضـوري إبتدائي نهائـي", "محضـر تبليـغ حكم غيابـي إبتـدائـي نهائـي", "محضـر تبليـغ حكم غيابـي نهائـي","محضـر تبليــغ أمــر  استعجالي","محضـر تبليــغ أمــر  استعجالي غيابي","محضر تبليــغ قـــرار غيـابـي","محضـر تبليــغ قـــرار حضـوري","محضر تبليغ حكــم إداري حضــوري","تبليــغ حكــم إداري غيابي","محضـر تبليـغ أمر استعجالي اداري حضوري","تبليــغ محضر تصريح الطعن بالنقض");
+
+        try {
+            conn = ConnectionSQLITE.getConnection();
+        } catch (SQLException ex) {
+            Logger.getLogger(ElmahadirController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ElmahadirController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        listMahder = FXCollections.observableArrayList();
+        initTable();
+        try {
+            uploadTable();
+        } catch (SQLException ex) {
+            Logger.getLogger(ElmahadirController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        combo_المحضر.getItems().addAll("التكليف بالحضور مع التسليم", "محضـر تبليــغ حكم حضـوري", "محضـر تبليــغ حكم غيابي", "محضـر تبليـغ حكم حضـوري إبتدائي نهائـي", "محضـر تبليـغ حكم غيابـي إبتـدائـي نهائـي", "محضـر تبليـغ حكم غيابـي نهائـي", "محضـر تبليــغ أمــر  استعجالي", "محضـر تبليــغ أمــر  استعجالي غيابي", "محضر تبليــغ قـــرار غيـابـي", "محضـر تبليــغ قـــرار حضـوري", "محضر تبليغ حكــم إداري حضــوري", "تبليــغ حكــم إداري غيابي", "محضـر تبليـغ أمر استعجالي اداري حضوري", "تبليــغ محضر تصريح الطعن بالنقض", "محضر تبليغ عريضة الطعن بالنقض");
     }
 
 }

@@ -10,6 +10,7 @@ import el_Mahadir.tablighe.Mahder_tabligh_7okm_7dori.*;
 import static Login.loginController.accueilStage;
 import static dashboard.AccueilController.stage2;
 import el_Mahadir.List.mahadirList;
+import el_Mahadir.Tek_hodor.Tek_HodorTaslimController1;
 import el_Mahadir.tablighe.Mahder_tabligh_7okm_Idari_7odori.Mahder_tabligh_7okm_Idari_7odoriController;
 import el_Mahadir.tablighe.Mahder_tabligh_7okm_ghiyabi.Mahder_tabligh_7okm_ghiyabiController;
 import el_Mahadir.tablighe.Mahder_tabligh_9arar_ghiyabi.Mahder_tabligh_9arar_ghiyabiController;
@@ -69,10 +70,11 @@ public class ElmahadirController implements Initializable {
     public void initTable() {
         column_المحاضر.setCellValueFactory(new PropertyValueFactory<mahadirList, String>("column_المحاضر"));
     }
-
+    @FXML
     public void uploadTable() throws SQLException {
-        table_المحاضر.getItems().clear();
-        String sql = "select * from anwa3_Elmahadir";
+        if (!combo_المحضر.getValue().equals(null))
+        {table_المحاضر.getItems().clear();
+        String sql = "select * from anwa3_Elmahadir where milaf = '"+combo_المحضر.getValue()+"'";
         ps = conn.prepareStatement(sql);
         rs = ps.executeQuery();
         while (rs.next()) {
@@ -84,10 +86,13 @@ public class ElmahadirController implements Initializable {
         ps.close();
         rs.close();
     }
+    }
+    
 
     @FXML
     private void chooseMahder(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
+        Tek_HodorTaslimController1 taklif_Bil7odor;
         Mahder_tabligh_7okm_7doriController tabligh_Hodori;
         Mahder_tabligh_7okm_ghiyabiController tabligh_Ghiyabi;
         Mahder_tabligh_Amre_Isti3jaliController tabligh_Isti3jali;
@@ -96,12 +101,15 @@ public class ElmahadirController implements Initializable {
         Mahder_tabligh_tasri7_Elta3n_biNNa9dController tabligh_Ta3n;
 
         if (!combo_المحضر.getValue().equals(null)) {
-            switch (combo_المحضر.getValue()) {
+            switch (table_المحاضر.getSelectionModel().getSelectedItem().getColumn_المحاضر()) {
 
                 case "التكليف بالحضور مع التسليم":
+                    fxmlLoader.setLocation(getClass().getResource("/el_Mahadir/Tek_hodor/tek_Hodor&Taslim_1.fxml"));
                     accueilStage.setTitle("التكليف بالحضور");
                     stackContent.getChildren().clear();
-                    stackContent.getChildren().add(FXMLLoader.load(getClass().getResource("/el_Mahadir/Tek_hodor/tek_Hodor&Taslim_1.fxml")));
+                    stackContent.getChildren().add(fxmlLoader.load());
+                    taklif_Bil7odor = fxmlLoader.getController();
+                    taklif_Bil7odor.choose_تبليغ.setText("التكليف بالحضور مع التسليم");
 
                     break;
 
@@ -263,7 +271,7 @@ public class ElmahadirController implements Initializable {
             stage2.close();
         }
     }
-
+ 
     /**
      * Initializes the controller class.
      */
@@ -279,12 +287,12 @@ public class ElmahadirController implements Initializable {
         }
         listMahder = FXCollections.observableArrayList();
         initTable();
-        try {
-            uploadTable();
-        } catch (SQLException ex) {
-            Logger.getLogger(ElmahadirController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        combo_المحضر.getItems().addAll("التكليف بالحضور مع التسليم", "محضـر تبليــغ حكم حضـوري", "محضـر تبليــغ حكم غيابي", "محضـر تبليـغ حكم حضـوري إبتدائي نهائـي", "محضـر تبليـغ حكم غيابـي إبتـدائـي نهائـي", "محضـر تبليـغ حكم غيابـي نهائـي", "محضـر تبليــغ أمــر  استعجالي", "محضـر تبليــغ أمــر  استعجالي غيابي", "محضر تبليــغ قـــرار غيـابـي", "محضـر تبليــغ قـــرار حضـوري", "محضر تبليغ حكــم إداري حضــوري", "تبليــغ حكــم إداري غيابي", "محضـر تبليـغ أمر استعجالي اداري حضوري", "تبليــغ محضر تصريح الطعن بالنقض", "محضر تبليغ عريضة الطعن بالنقض");
+        
+        combo_المحضر.setPromptText("التكليف بالحضور");
+//        combo_المحضر.getItems().addAll("التكليف بالحضور مع التسليم", "محضـر تبليــغ حكم حضـوري", "محضـر تبليــغ حكم غيابي", "محضـر تبليـغ حكم حضـوري إبتدائي نهائـي", "محضـر تبليـغ حكم غيابـي إبتـدائـي نهائـي", "محضـر تبليـغ حكم غيابـي نهائـي", "محضـر تبليــغ أمــر  استعجالي", "محضـر تبليــغ أمــر  استعجالي غيابي", "محضر تبليــغ قـــرار غيـابـي", "محضـر تبليــغ قـــرار حضـوري", "محضر تبليغ حكــم إداري حضــوري", "تبليــغ حكــم إداري غيابي", "محضـر تبليـغ أمر استعجالي اداري حضوري", "تبليــغ محضر تصريح الطعن بالنقض", "محضر تبليغ عريضة الطعن بالنقض");
+        combo_المحضر.getItems().addAll("التكليف بالحضور","التبليغات","التنفيذات");
     }
+
+   
 
 }

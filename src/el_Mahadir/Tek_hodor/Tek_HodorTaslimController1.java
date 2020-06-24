@@ -84,14 +84,12 @@ public class Tek_HodorTaslimController1 implements Initializable {
     public TextField tf_المطلوب;
     @FXML
     public TextField tf_سكن_المطلوب;
-    @FXML
     public Button btn_modifier;
     @FXML
     public Button btn_ajoute;
     @FXML
     private Label isEmpty;
-
-    @FXML
+    
     public Button btnPrint;
     private Button btnClose;
 
@@ -115,6 +113,8 @@ public class Tek_HodorTaslimController1 implements Initializable {
     private ComboBox<String> comboTypeMahder;
     @FXML
     private Label lbl_قسم;
+    @FXML
+    public Label choose_تبليغ;
 
     
     
